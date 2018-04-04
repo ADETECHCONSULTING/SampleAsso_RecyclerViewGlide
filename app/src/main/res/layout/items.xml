@@ -3,10 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:id="@+id/ctnMain"
     xmlns:tools="http://schemas.android.com/tools">
 
 
     <ImageView
+        android:id="@+id/imgPokemon"
         android:layout_width="50dp"
         android:layout_height="50dp"
         tools:src="@drawable/ic_launcher_background"/>

@@ -16,7 +16,7 @@ public interface IPoke {
 
 
     @GET("pokemon/{number}")
-    Call<Pokemon> getPokemonById(@Path("number") int number);
+    Call<DetailPokemon> getPokemonById(@Path("number") int number);
 
     @GET("pokemon/")
     Call<PokemonResults> getAllPokemons();

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rcvMain;
     private ArrayList<String> assoPokemon;
     private Call<PokemonResults> pokemonCall;
-
+    private IPoke poke;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         assoPokemon = new ArrayList<>();
 
-        IPoke poke = new Retrofit.Builder()
+        poke = new Retrofit.Builder()
                 .baseUrl(IPoke.ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         rcvMain.setLayoutManager(new LinearLayoutManager(this));
 
         //Instancier l'adapter
-        final Adapter adapter = new Adapter(this);
+        final Adapter adapter = new Adapter(this, poke);
 
         //Ajout de l'adapter
         rcvMain.setAdapter(adapter);
